@@ -1,4 +1,4 @@
-package secondpackage
+package secondPackage
 
 import "fmt"
 
@@ -7,7 +7,7 @@ func SecondPackageFun() {
 	fmt.Println("Hello form second package")
 }
 
-// private function
-func secondPackageFun() {
-	fmt.Println("Hello form second package")
-}
+// // private function
+// func secondPackageFun() {
+// 	fmt.Println("Hello form second package")
+// }

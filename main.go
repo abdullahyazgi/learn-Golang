@@ -1,7 +1,7 @@
 package main
 
 import (
-	"firstProgram/secondpackage"
+	"firstProgram/secondPackage"
 	"fmt"
 )
 
@@ -12,6 +12,6 @@ func main() {
 	fmt.Println("Hello", name)
 	fmt.Println("age:", age)
 	SecondFile()
-	secondpackage.SecondPackageFun()
-	// secondpackage.secondPackageFun() // private --> error: undefined
+	secondPackage.SecondPackageFun()
+	// secondPackage.secondPackageFun() // private --> error: undefined
 }
