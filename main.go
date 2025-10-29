@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"maps"
 )
+
+// "time"
 
 // import (
 // 	"firstProgram/secondPackage"
@@ -86,47 +88,84 @@ func main() {
 	// }
 
 	// // Switch
-	i := 2
-	fmt.Println("Write ", i, " as ")
-	switch i {
-	case 1:
-		fmt.Println("one")
-	case 2:
-		fmt.Println("two")
-	case 3:
-		fmt.Println("three")
-	}
+	// i := 2
+	// fmt.Println("Write ", i, " as ")
+	// switch i {
+	// case 1:
+	// 	fmt.Println("one")
+	// case 2:
+	// 	fmt.Println("two")
+	// case 3:
+	// 	fmt.Println("three")
+	// }
 
-	// fmt.Println(time.Now())
-	// fmt.Println(time.Now().Weekday())
+	// // fmt.Println(time.Now())
+	// // fmt.Println(time.Now().Weekday())
 
-	switch time.Now().Weekday() {
-	case time.Friday, time.Saturday:
-		fmt.Println("It's the weekend")
-	default:
-		fmt.Println("It's a weekday")
-	}
+	// switch time.Now().Weekday() {
+	// case time.Friday, time.Saturday:
+	// 	fmt.Println("It's the weekend")
+	// default:
+	// 	fmt.Println("It's a weekday")
+	// }
 
-	t := time.Now()
-	switch {
-	case t.Hour() < 12:
-		fmt.Println("It's before noon")
-	default:
-		fmt.Println("It's after noon")
-	}
+	// t := time.Now()
+	// switch {
+	// case t.Hour() < 12:
+	// 	fmt.Println("It's before noon")
+	// default:
+	// 	fmt.Println("It's after noon")
+	// }
 
-	whatAmI := func(i interface{}) {
-		switch t := i.(type) {
-		case bool:
-			fmt.Println("I'm bool")
-		case int:
-			fmt.Println("I'm an int")
-		default:
-			fmt.Printf("Don't know type %T\n", t)
-		}
+	// whatAmI := func(i interface{}) {
+	// 	switch t := i.(type) {
+	// 	case bool:
+	// 		fmt.Println("I'm bool")
+	// 	case int:
+	// 		fmt.Println("I'm an int")
+	// 	default:
+	// 		fmt.Printf("Don't know type %T\n", t)
+	// 	}
+	// }
+	// whatAmI(true)
+	// whatAmI(1)
+	// whatAmI("hey")
+
+	// // Maps
+
+	m := make(map[string]int)
+	m["k1"] = 8
+	m["k2"] = 19
+	m["w3"] = 4
+	fmt.Println("map:", m)
+
+	v1 := m["k1"]
+	fmt.Println("v1:", v1)
+
+	v3 := m["k3"]
+	fmt.Println("v3:", v3)
+
+	fmt.Println("len:", len(m))
+
+	_, prs := m["k2"]
+	fmt.Println("prs:", prs)
+
+	delete(m, "k2")
+	fmt.Println("map:", m)
+
+	clear(m)
+	fmt.Println("map:", m)
+
+	_, prsD := m["k2"]
+	fmt.Println("prs:", prsD)
+
+	n := map[string]int{"foo": 1, "bar": 2}
+	fmt.Println("map:", n)
+
+	n2 := map[string]int{"foo": 1, "bar": 2}
+
+	if maps.Equal(n, n2) {
+		fmt.Println("n === n2")
 	}
-	whatAmI(true)
-	whatAmI(1)
-	whatAmI("hey")
 
 }
