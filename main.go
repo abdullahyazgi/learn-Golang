@@ -1,9 +1,8 @@
 package main
 
-import (
-	"fmt"
-	"maps"
-)
+import "fmt"
+
+// "maps"
 
 // "time"
 
@@ -11,6 +10,19 @@ import (
 // 	"firstProgram/secondPackage"
 // 	"fmt"
 // )
+
+func plus(a int, b int) int {
+
+	return a + b
+}
+
+func plusPlus(a, b, c int) int {
+	return a + b + c
+}
+
+func vals() (int, int) {
+	return 3, 8
+}
 
 func main() {
 	// print("hello")
@@ -132,40 +144,52 @@ func main() {
 	// whatAmI("hey")
 
 	// // Maps
+	// m := make(map[string]int)
+	// m["k1"] = 8
+	// m["k2"] = 19
+	// m["w3"] = 4
+	// fmt.Println("map:", m)
 
-	m := make(map[string]int)
-	m["k1"] = 8
-	m["k2"] = 19
-	m["w3"] = 4
-	fmt.Println("map:", m)
+	// v1 := m["k1"]
+	// fmt.Println("v1:", v1)
 
-	v1 := m["k1"]
-	fmt.Println("v1:", v1)
+	// v3 := m["k3"]
+	// fmt.Println("v3:", v3)
 
-	v3 := m["k3"]
-	fmt.Println("v3:", v3)
+	// fmt.Println("len:", len(m))
 
-	fmt.Println("len:", len(m))
+	// _, prs := m["k2"]
+	// fmt.Println("prs:", prs)
 
-	_, prs := m["k2"]
-	fmt.Println("prs:", prs)
+	// delete(m, "k2")
+	// fmt.Println("map:", m)
 
-	delete(m, "k2")
-	fmt.Println("map:", m)
+	// clear(m)
+	// fmt.Println("map:", m)
 
-	clear(m)
-	fmt.Println("map:", m)
+	// _, prsD := m["k2"]
+	// fmt.Println("prs:", prsD)
 
-	_, prsD := m["k2"]
-	fmt.Println("prs:", prsD)
+	// n := map[string]int{"foo": 1, "bar": 2}
+	// fmt.Println("map:", n)
 
-	n := map[string]int{"foo": 1, "bar": 2}
-	fmt.Println("map:", n)
+	// n2 := map[string]int{"foo": 1, "bar": 2}
 
-	n2 := map[string]int{"foo": 1, "bar": 2}
+	// if maps.Equal(n, n2) {
+	// 	fmt.Println("n === n2")
+	// }
 
-	if maps.Equal(n, n2) {
-		fmt.Println("n === n2")
-	}
+	res := plus(1, 2)
+	fmt.Println("1+2 =", res)
+
+	res = plusPlus(1, 2, 3)
+	fmt.Println("1+2+3 =", res)
+
+	a, b := vals()
+	fmt.Println(a)
+	fmt.Println(b)
+
+	_, c := vals()
+	fmt.Println(c)
 
 }
