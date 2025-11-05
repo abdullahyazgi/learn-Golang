@@ -24,14 +24,22 @@ import "fmt"
 // 	return 3, 8
 // }
 
-func sum(nums ...int) {
-	fmt.Print(nums, " ")
-	total := 0
+// func sum(nums ...int) {
+// 	fmt.Print(nums, " ")
+// 	total := 0
 
-	for _, num := range nums {
-		total += num
+// 	for _, num := range nums {
+// 		total += num
+// 	}
+// 	fmt.Println((total))
+// }
+
+func intSeq() func() int {
+	i := 0
+	return func() int {
+		i++
+		return i
 	}
-	fmt.Println((total))
 }
 
 func main() {
@@ -165,7 +173,6 @@ func main() {
 
 	// v3 := m["k3"]
 	// fmt.Println("v3:", v3)
-
 	// fmt.Println("len:", len(m))
 
 	// _, prs := m["k2"]
@@ -201,10 +208,21 @@ func main() {
 	// _, c := vals()
 	// fmt.Println(c)
 
-	sum(1, 2)
-	sum(1, 2, 3)
+	// sum(1, 2)
+	// sum(1, 2, 3)
 
-	nums := []int{1, 2, 3, 4}
-	sum(nums...)
+	// nums := []int{1, 2, 3, 4}
+	// sum(nums...)
 
+	// Closures
+
+	nextInt := intSeq()
+
+	fmt.Println(nextInt())
+	fmt.Println(nextInt())
+	fmt.Println(nextInt())
+
+	newInts := intSeq()
+	fmt.Println(newInts())
+	fmt.Println(newInts())
 }
